@@ -1,0 +1,58 @@
+<ion-content class="bg-blue" style="height:100%;">
+  <ion-grid class="bg-blue">
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-9>
+        <div class="message-wrap">
+          <div *ngFor="let chat of chatList" [@flyInOut]="chat.state">
+            <img *ngIf="chat.type=='Pesan'" src="https://www.logoground.com/uploadthumbs/201727192017-10-064147767baby_logo.jpg" width="48px" height="48px" style="border-radius:100%;"/>
+            <div class="card" *ngIf="chat.type=='Pesan'">
+              <div class="item item-text-wrap cardPadding">{{chat.text}}</div>
+            </div>
+          </div>
+          <ion-slides style="min-height:300px;">
+            <div *ngFor="let chat of chatList">
+              <ion-slide class="cardIkan" *ngIf="chat.type=='Ikan'">
+                <img [src]="chat.gambarIkan" style="border-radius:10px 10px 0px 0px;width:100%;height:150px;"/>
+                <p class="namaIkan">Ikan {{chat.namaIkan}}</p>
+                <p class="hargaIkan">Rp. {{chat.hargaIkan}} / Kg</p>
+                <p class="waktuPanenIkan"><ion-icon ios="ios-time" md="md-time"></ion-icon> {{chat.waktuTangkapanIkan}} jam yang lalu</p>
+                <p class="tempatPanenIkan"><ion-icon ios="ios-pin" md="ios-pin"></ion-icon> {{chat.namaTpi}}</p>
+                <button ion-button (click)="addToCart(chat)">Belikan</button>
+              </ion-slide>
+            </div>
+          </ion-slides>
+        </div>
+      </ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <input class="textarea" *ngIf="showInputButton" type="text" placeholder="What do you want me to do?" [(ngModel)]="input" (keyup.enter)="processInput()"/>
+  <ion-row style="padding-bottom:3%;">
+    <ion-col col-4></ion-col>
+    <ion-col col-2>
+<!--       <button class="btn-transparent" ion-button clear icon-only>
+        <ion-icon name="home"></ion-icon>
+      </button> -->
+    </ion-col>
+    <ion-col col-2>
+      <button class="btn-transparent" ion-button clear icon-only>
+        <ion-icon name="basket"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-2>
+      <button class="btn-transparent" ion-button clear icon-only (click)="openCartModal()">
+        <ion-icon name="cart">
+          <ion-badge class="notifications-badge" color="danger" *ngIf="isCartCounterShow()">{{cartCounter}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-2>
+      <button class="btn-transparent" ion-button clear icon-only>
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

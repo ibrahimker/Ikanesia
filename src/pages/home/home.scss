@@ -1,0 +1,140 @@
+input.textarea {
+  position: fixed;
+  bottom: 2%;
+  left: 5%;
+  width: 90%;
+  height: 10%;
+  background: transparent;
+  border: #69b4f7 solid 2px;
+  padding-left: 8%;
+  padding-right: 8%;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  z-index: 9999999999;
+  background-color: #253d75 !important;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #69b4f7;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #69b4f7;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #69b4f7;
+}
+body{
+  background-color:grey;
+}
+.bg-blue{
+  background-color:#0d4075;
+}
+.bg-grey{
+  background-color:grey;
+}
+.card{
+  background-color: #fff;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.cardPadding{
+  padding: 5% 10%;
+  margin: 5% 5% 5% 5%;
+}
+/*card ikan*/
+.cardIkan{
+  background-color: #fff;
+  /*padding: 5% 10%;*/
+  /*margin: 5% 5% 5% 5%;*/
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.namaIkan{
+  color:#70b4ec;
+  font-size:18px;
+  text-transform: uppercase;
+  font-weight:700;
+  text-align:left;
+  padding-left:10%;
+  padding-right:10%;
+  margin:0;
+}
+.hargaIkan{
+  color:#64b699;
+  font-size:16px;
+  font-weight:700;
+  text-align:left;
+  padding-left:10%;
+  padding-right:10%;
+  margin:0;
+}
+.waktuPanenIkan{
+  color:#000;
+  font-size:14px;
+  font-weight:300;
+  text-align:left;
+  padding-left:10%;
+  padding-right:10%;
+  margin:0;
+}
+.tempatPanenIkan{
+  color:#000;
+  font-size:14px;
+  font-weight:300;
+  text-align:left;
+  padding-left:10%;
+  padding-right:10%;
+  margin:0;
+}
+.scroll-zoom-wrapper {
+  white-space: nowrap;
+}
+
+ion-card {
+  width: 500px !important;
+  display: inline-block;
+}
+
+ion-scroll {
+  min-height: 160px; 
+  height: auto;
+
+  .scroll-content {
+    padding: 0px !important;
+  }    
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.notifications-badge {
+  background-color: #e6316a;
+  position: absolute;
+  border-radius: 100%;
+  top: 0px;
+  right: 0px;
+  font-size: 1rem;
+}

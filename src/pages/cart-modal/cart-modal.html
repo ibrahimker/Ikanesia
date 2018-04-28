@@ -1,0 +1,82 @@
+<!-- <ion-header>
+	<ion-navbar>
+		<ion-title>Keranjang Belanja</ion-title>
+		<ion-buttons end>
+			
+		</ion-buttons>
+	</ion-navbar>
+</ion-header> -->
+<ion-content padding style="height:90%;border-radius:0px 0px 20px 20px;">
+	<ion-row>
+		<ion-col col-10>
+			<p class="keranjangBelanja">Keranjang Belanja</p>
+		</ion-col>
+		<ion-col col-2>
+			<button ion-button icon-only clear (click)="closeModal()" class="closeButton">
+				<ion-icon name="close"></ion-icon>
+			</button>
+		</ion-col>
+	</ion-row>
+	<div *ngFor="let list of cartList;index as listIndex">
+		<ion-row style="padding-top:5%;">
+			<ion-col col-12>
+				<p class="commonText">Dari <span class="commonTextBlue">{{list.namaTpi}}</span></p>
+			</ion-col>
+		</ion-row>
+		<div *ngFor="let listIkan of list.dataIkan;index as listIkanIndex">
+			<ion-row>
+				<ion-col col-10 style="border:dotted 0.5px grey">
+					<ion-row>
+						<ion-col col-10>
+							<p class="commonText">Ikan {{listIkan.namaIkan}}</p>
+						</ion-col>
+						<ion-col col-2>
+							<p class="commonText">{{listIkan.nominalIkan}} kg</p>
+						</ion-col>				
+					</ion-row>
+					<ion-row>
+						<ion-col col-7>
+							<p class="commonTextGreen">Rp {{listIkan.hargaSatuan}}/kg</p>
+						</ion-col>
+						<ion-col col-5>
+							<p class="commonTextGreen" style="text-align:end;">Rp {{listIkan.hargaTotal}}</p>
+						</ion-col>				
+					</ion-row>
+				</ion-col>
+				<ion-col col-2 style="border: dotted 0.5px grey;background-color: rgba(220, 212, 212, 0.11);">
+					<button ion-button icon-only clear color="danger" full (click)="clearItem(listIndex,listIkanIndex)" style="width:100%;height:100%;">
+						<ion-icon name="trash"></ion-icon>
+					</button>
+				</ion-col>
+			</ion-row>
+		</div>
+		<ion-row>
+			<ion-col col-5>
+				<p class="commonText">Pengiriman</p>
+			</ion-col>
+			<ion-col col-7>
+				<ion-select [(ngModel)]="list.kurir" name="list.kurir" style="position: absolute;right: 0;width: 75%;max-width: none;padding:3%;">
+					<ion-option *ngFor="let kurir of listKurir" value="{{kurir}}">{{kurir}}</ion-option>
+				</ion-select>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-12>
+				<p class="commonTextGreen" style="text-align:end;">Rp {{ongkir}}</p>
+			</ion-col>				
+		</ion-row>
+		<hr>
+		<ion-row>
+			<ion-col col-7>
+				<p class="commonTextGreen">Total</p>
+			</ion-col>
+			<ion-col col-5>
+				<p class="commonTextGreen" style="text-align:end;">Rp {{list.hargaTotalTpi}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<button block ion-button (click)="continueToCheckout(list)">Lanjut Pembayaran</button>
+		</ion-row>
+	</div>
+
+</ion-content>
